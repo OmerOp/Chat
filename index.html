@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .login-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: calc(100% - 22px);
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Enter Chat Key</h1>
+        <input type="text" id="chatKey" placeholder="Enter chat key" />
+        <button onclick="enterChat()">Enter Chat</button>
+        <div id="error" style="color: red; margin-top: 10px;"></div>
+    </div>
+
+    <script>
+        function enterChat() {
+            var chatKey = document.getElementById('chatKey').value.trim();
+            var error = document.getElementById('error');
+            
+            // Validate chat key
+            if (chatKey === 'Blud') {
+                // Redirect to chat room
+                window.location.href = 'chat.html';
+            } else {
+                error.textContent = 'Invalid chat key. Please try again.';
+            }
+        }
+    </script>
+</body>
+</html>
